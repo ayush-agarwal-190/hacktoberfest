@@ -113,17 +113,17 @@ if __name__ == "__main__":
         elif "log off" in statement or "sign out" in statement:
             speak("Ok , your pc will log off in 10 sec make sure you exit from all applications")
             subprocess.call(["shutdown", "/l"])
-	def digital_assistant(data):
+            def digital_assistant(data):
 #     global listening
-   elif "how are you" in data:
+        elif "how are you" in data:
         listening = True
         respond("I am well")
 
-    elif "what time is it" in data:
+        elif "what time is it" in data:
         listening = True
         respond(ctime())
 
-    elif "where is" in data:
+        elif "where is" in data:
         listening = True
         data = data.split(" ")
         location_url = "https://www.google.com/maps/place/" + str(data[2])
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         maps_arg = '/usr/bin/open -a "/Applications/Google Chrome.app" ' + location_url
         os.system(maps_arg)
         
-    elif "what is the weather in" in data:
+        elif "what is the weather in" in data:
         listening = True
         api_key = "Your_API_key"
         weather_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -146,9 +146,10 @@ if __name__ == "__main__":
             desc = js["weather"][0]["description"]
             resp_string = " The temperature in Kelvin is " + str(temp) + " The humidity is " + str(hum) + " and The weather description is "+ str(desc)
             respond(resp_string)
-        else: 
+        else:
             respond("City Not Found") 
-    elif "stop listening" in data:
+        elif
+        "stop listening" in data:
         listening = False
         print('Listening stopped')
     return listening
